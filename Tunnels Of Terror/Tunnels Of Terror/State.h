@@ -85,10 +85,122 @@ public:
 	virtual bool travelWest(void) { cout << "No path that way!" << endl; return false; }
 };
 
-class Room : public State, public Transition
+class Entity : public State, public Transition
 {
 public:
-	Room(StateContext* Context) : State(Context) {}
+	Entity(StateContext* Context) : State(Context){	};
+
 };
 
+class Room : public StateContext, public Transition
+{
+private:
+	Entity* CurrentState = nullptr;
+public:
+	Room();
+	
+};
+
+class Entrance : public Entity
+{
+public:
+	Entrance(StateContext* Context) : Entity(Context) { cout << "You are at the Entrance" << endl; };
+	bool travelNorth(void);
+	
+};
+
+class DCavern : public Entity
+{
+public:
+	DCavern(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelSouth(void);
+	bool travelEast(void);
+	bool travelWest(void);
+};
+
+class Guard : public Entity
+{
+public:
+	Guard(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelEast(void);
+};
+
+class Barracks : public Entity
+{
+public:
+	Barracks(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelSouth(void);
+};
+
+class Kitchen : public Entity
+{
+public:
+	Kitchen(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelSouth(void);
+	bool travelEast(void);
+	bool travelWest(void);
+};
+
+class IceBox : public Entity
+{
+public:
+	IceBox(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+};
+
+class Larder : public Entity
+{
+public:
+	Larder(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelSouth(void);
+	bool travelWest(void);
+};
+
+class Bottle : public Entity
+{
+public:
+	Bottle(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelSouth(void);
+	bool travelEast(void);
+};
+
+class GreatHall : public Entity
+{
+public:
+	GreatHall(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelSouth(void);
+	bool travelEast(void);
+	bool travelWest(void);
+};
+
+class Trolls : public Entity
+{
+public:
+	Trolls(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelSouth(void);
+	bool travelEast(void);
+};
+
+class Library : public Entity
+{
+public:
+	Library(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelSouth(void);
+	bool travelEast(void);
+};
+
+class Mysterious : public Entity
+{
+public:
+	Mysterious(StateContext* Context) : Entity(Context) { cout << "You are at the Damp Cavern" << endl; };
+	bool travelNorth(void);
+	bool travelSouth(void);
+	bool travelWest(void);
+};
 #endif

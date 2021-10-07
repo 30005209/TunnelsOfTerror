@@ -139,17 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entity.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="State.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
